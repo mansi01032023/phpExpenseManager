@@ -17,39 +17,49 @@ $("#expense").click(function () {
 // function to add income
 function addIncome() {
   let income = $("#enterIncome").val();
-  $.ajax({
-    url: "addIncome.php",
-    type: "POST",
-    data: "income=" + income,
-    datatype: "number",
-  }).done(function (result) {
-    let res = jQuery.parseJSON(result);
-    $("#showIncome").val(res["income"]);
-    $("#showRemaining").val(res["remaining"]);
-    $("#showExpense").val(res["totalExpense"]);
-    total();
-    display();
-  });
+  if (income == "" || income == 0) {
+    $("#error").html("Enter valid income").css("color", "red");
+  } else {
+    $("#error").html("");
+    $.ajax({
+      url: "addIncome.php",
+      type: "POST",
+      data: "income=" + income,
+      datatype: "number",
+    }).done(function (result) {
+      let res = jQuery.parseJSON(result);
+      $("#showIncome").val(res["income"]);
+      $("#showRemaining").val(res["remaining"]);
+      $("#showExpense").val(res["totalExpense"]);
+      total();
+      display();
+    });
+  }
 }
 // function to add expense
 function addExpense() {
   let expense = $("#enterExpense").val();
   let category = $("#selectExpense").val();
-  $.ajax({
-    url: "addExpense.php",
-    type: "POST",
-    data: { Expense: expense, Category: category, flag: flag },
-    datatype: "JSON",
-  }).done(function (result) {
-    let res = jQuery.parseJSON(result);
-    $("#showIncome").val(res["income"]);
-    $("#showRemaining").val(res["remaining"]);
-    $("#showExpense").val(res["totalExpense"]);
-    $("#addEnteredExpense").html("Add");
-    flag = 0;
-    total();
-    display();
-  });
+  if (expense == "" || expense == 0) {
+    $("#error").html("Enter valid expense").css("color", "red");
+  } else {
+    $("#error").html("");
+    $.ajax({
+      url: "addExpense.php",
+      type: "POST",
+      data: { Expense: expense, Category: category, flag: flag },
+      datatype: "JSON",
+    }).done(function (result) {
+      let res = jQuery.parseJSON(result);
+      $("#showIncome").val(res["income"]);
+      $("#showRemaining").val(res["remaining"]);
+      $("#showExpense").val(res["totalExpense"]);
+      $("#addEnteredExpense").html("Add");
+      flag = 0;
+      total();
+      display();
+    });
+  }
 }
 // function to display the expenses
 function display() {

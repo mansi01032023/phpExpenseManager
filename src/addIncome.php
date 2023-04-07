@@ -5,6 +5,7 @@ if (!isset($_SESSION['income'])) {
     $_SESSION['income'] = $_POST['income'];
 }else{
     $_SESSION['income'] += ($_POST['income'] * 1);
+    $_SESSION['remaining'] += ($_POST['income'] * 1);
 }
 include_once("config.php");
 $array = array(

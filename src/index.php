@@ -38,6 +38,7 @@ error_reporting(0);
                 </select>
                 <button id="addEnteredExpense" class="container__addbtn" onclick="addExpense()">Add</button>
             </div>
+            <p id="error"></p>
         </div>
         <hr>
         <!-- section to display income expense and remaining -->
