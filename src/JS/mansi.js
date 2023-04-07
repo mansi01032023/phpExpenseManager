@@ -17,7 +17,7 @@ $("#expense").click(function () {
 // function to add income
 function addIncome() {
   let income = $("#enterIncome").val();
-  if (income == "" || income == 0) {
+  if (income == "" || income <= 0) {
     $("#error").html("Enter valid income").css("color", "red");
   } else {
     $("#error").html("");
@@ -40,7 +40,7 @@ function addIncome() {
 function addExpense() {
   let expense = $("#enterExpense").val();
   let category = $("#selectExpense").val();
-  if (expense == "" || expense == 0) {
+  if (expense == "" || expense <= 0) {
     $("#error").html("Enter valid expense").css("color", "red");
   } else {
     $("#error").html("");
