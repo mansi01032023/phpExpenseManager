@@ -1,3 +1,4 @@
+/* body section starts here */
 body {
     background: #fff;
     color: #333;
@@ -5,6 +6,7 @@ body {
     background-color: #e4e4e4;
 }
 
+/* container section starts here */
 .container {
     display: block;
     width: 400px;
@@ -14,6 +16,7 @@ body {
     border-radius: 10px
 }
 
+/* btn  here */
 .container__btn {
     padding: 15px;
     background-color: rgb(59, 221, 116);
@@ -71,12 +74,30 @@ body {
     border: solid 1px #ccc;
     border-radius: 5px;
 }
-#addIncome{
+
+#addIncome {
     margin-left: 40px;
 }
-.container__table{
-    margin:auto;
+
+/* table section is here */
+.container__table {
+    margin: auto;
 }
-th, td{
+
+th,
+td {
     padding-right: 30px;
+}
+
+#category {
+    margin: auto;
+    border: 1px solid gray;
+}
+
+#mis,
+#gro,
+#veg,
+#tra {
+    padding: 1px 20px 1px 1px;
+    border: 1px solid gray;
 }

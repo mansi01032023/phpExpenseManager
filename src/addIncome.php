@@ -1,9 +1,16 @@
 <?php
+// this section adds income to the existing income
 session_start();
 if (!isset($_SESSION['income'])) {
     $_SESSION['income'] = $_POST['income'];
 }else{
-    $_SESSION['income'] += $_POST['income'];
+    $_SESSION['income'] += ($_POST['income'] * 1);
 }
-print_r($_SESSION['income']);
+include_once("config.php");
+$array = array(
+    'totalExpense'=>$_SESSION['totalExpense'],
+    'remaining' => $_SESSION['remaining'],
+    'income' => $_SESSION['income']
+);
+print_r(json_encode($array));
 ?>
