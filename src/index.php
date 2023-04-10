@@ -85,4 +85,4 @@ error_reporting(0);
     </div>
 </body>
 <!-- adding the script -->
-<script src="./JS/mansi.js"></script>
+<script src="./JS/jsFile.js"></script>
